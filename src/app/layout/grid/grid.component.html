@@ -1,0 +1,70 @@
+<div [@routerTransition]>
+    <app-page-header [heading]="'Bootstrap Grid'" [icon]="'fa-wrench'"></app-page-header>
+    <div class="row">
+        <div class="col-lg-6">
+
+            <form #f="ngForm" role="form">
+                <div class="form-group">
+                    <label for="disabledSelect">Thông Tin Bài Viết</label>
+                    <select [(ngModel)]="category" name="category" class="form-control">
+                        <option value="tour nhieu">Tour Nhiều</option>
+                        <option value="tour nuoc ngoai">Du Lịch Nước Ngoài</option>
+                        <option value="tour trong nuoc">Du Lịch Trong Nước</option>
+                    </select>
+                </div>
+
+                <fieldset class="form-group">
+                    <label>Tiêu Đề</label>
+                    <input [(ngModel)]="title" name="title" class="form-control" placeholder="Tiêu Đề">
+                </fieldset>
+
+
+                <fieldset class="form-group">
+                    <label>Nội Dung</label>
+                    <textarea [(ngModel)]="content" name="content" class="form-control" rows="5"></textarea>
+                </fieldset>
+
+            </form>
+
+        </div>
+        <div class="col-lg-6">
+            <form role="form">
+
+                <fieldset>
+
+                    <fieldset class="form-group">
+                        <label>Giá Gốc</label>
+                        <input [(ngModel)]="price" name="price" type="number" class="form-control" placeholder="Giá">
+                    </fieldset>
+
+                    <fieldset class="form-group">
+                        <label>Giá Khuyến Mãi</label>
+                        <input type="number" [(ngModel)]="extraPrice" name="extraPrice" class="form-control" placeholder="Giá">
+                    </fieldset>
+
+                    <fieldset class="form-group">
+                        <label>Số Ngày</label>
+                        <input type="number" [(ngModel)]="days" name="days" class="form-control" placeholder="Giá">
+                    </fieldset>
+
+                </fieldset>
+
+            </form>
+
+            
+            <br>
+
+        </div>
+    </div>
+    <!-- /.row -->
+    <div class="row">
+        <div class="col col-xl-12" style="text-align:center;">
+            <p>
+                <button (click)="update()" class="btn btn-info">Lưu</button>
+                <button class="btn btn-default" (click)="redirect()">Đóng</button>
+            </p>
+
+        </div>
+    </div>
+
+</div>

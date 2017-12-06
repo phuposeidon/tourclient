@@ -1,0 +1,97 @@
+<div [@routerTransition]>
+    <app-page-header [heading]="'Thêm'" [icon]="'fa-edit'"></app-page-header>
+    <!-- <div *ngIf="!isSuccess" class="alert alert-success">Thêm thành công</div> -->
+    <div class="row">
+        <div class="col-lg-6">
+
+            <form #f="ngForm" role="form">
+                <div class="form-group">
+                    <label for="disabledSelect">Danh Mục</label>
+                    <select  [(ngModel)]="category" name="category" class="form-control">
+                        <option value="tour nhieu">Tour Nhiều</option>
+                        <option value="tour nuoc ngoai">Du Lịch Nước Ngoài</option>
+                        <option value="tour trong nuoc">Du Lịch Trong Nước</option>
+                    </select>
+                </div>
+
+                <fieldset class="form-group">
+                    <label>Tiêu Đề</label>
+                    <input [(ngModel)]="title" name="title"  class="form-control" placeholder="Tiêu Đề">
+                </fieldset>
+
+
+                <fieldset class="form-group">
+                    <label>Nội Dung</label>
+                    <textarea [(ngModel)]="content" name="content" class="form-control" rows="6"></textarea>
+                </fieldset>
+
+            </form>
+
+        </div>
+        <div class="col-lg-6">
+            <form role="form">
+
+                <fieldset>
+
+                    <fieldset class="form-group">
+                        <label>Giá Gốc</label>
+                        <input [(ngModel)]="price" name="price" type="number" class="form-control" placeholder="Giá">
+                    </fieldset>
+
+                    <fieldset class="form-group">
+                        <label>Giá Khuyến Mãi</label>
+                        <input type="number"   [(ngModel)]="extraPrice" name="extraPrice" class="form-control" placeholder="Giá">
+                    </fieldset>
+                    <fieldset class="form-group">
+                        <label>Số Ngày</label>
+                        <input type="number"   [(ngModel)]="days" name="days" class="form-control" placeholder="Giá">
+                    </fieldset>
+
+                </fieldset>
+
+            </form>
+
+            <form enctype="multipart/form-data">
+                <label for="">Chọn Hình</label>
+                <div class="row">
+                    <div class="col col-xl-6">
+                        <fieldset class="form-group">
+                            <input type="file"  id="photo1" />
+                        </fieldset>
+
+                        <fieldset class="form-group">
+                            <input type="file"  id="photo2" />
+                        </fieldset>
+
+                        <!-- <fieldset class="form-group">
+                            <input type="file" name="photo" ng2FileSelect [uploader]="uploader" />
+                        </fieldset> -->
+                    </div>
+
+                    <div class="col col-xl-6">
+                        <fieldset class="form-group">
+                            <input type="file"  id="photo3" />
+                        </fieldset>
+
+                        <fieldset class="form-group">
+                            <input type="file"  id="photo4" />
+                        </fieldset>
+                    </div>
+                </div>
+
+            </form>
+            <br>
+
+        </div>
+    </div>
+    <!-- /.row -->
+    <div class="row">
+        <div class="col col-xl-12" style="text-align:center;">
+            <p>
+                <button (click)="upload()" class="btn btn-info">Lưu</button>
+                <button (click)="redirect()" class="btn btn-default">Đóng</button>
+            </p>
+            
+        </div>
+    </div>
+</div>

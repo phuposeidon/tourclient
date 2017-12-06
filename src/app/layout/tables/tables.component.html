@@ -1,0 +1,35 @@
+<div [@routerTransition]>
+    <!-- <app-page-header [heading]="'Tour'" [icon]="'fa-table'"></app-page-header> -->
+    <div class="card mb-12">
+        <div class="card-header">Danh Sách</div>
+        <div class="table-responsive">
+            <table class="table table-hover table-striped">
+                <thead>
+                    <tr>
+                        <th>Tiêu Đề</th>
+                        <th>Danh Mục</th>
+                        <th>Ngày Tạo</th>
+                        <th>Giá</th>
+                        <th>Số Ngày</th>
+                        <th>Trạng Thái</th>
+                        <th>Hành Động</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr *ngFor="let tour of tours;let i = index">
+                        <td>{{tour.title}}</td>
+                        <td>{{tour.category}}</td>
+                        <td>20-11-2017</td>
+                        <td>{{tour.price|currency:'$':true:'.0'}}</td>
+                        <td>{{tour.days}}</td>
+                        <td>Hoạt Động</td>
+                        <td>
+                            <button class="btn btn-sm btn-info" [routerLink]="['/grid',tour._id]" ><i class="fa fa-edit"></i></button>
+                            <button class="btn btn-sm btn-danger" (click)="deleteTour(tour._id,i)"><i class="fa fa-trash"></i></button>
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+    </div>
+</div>
